@@ -7,11 +7,13 @@ sns.set(style="whitegrid")
 
 st.title("Netflix User Behavior Analysis")
 
-# Upload CSV dataset
-uploaded_file = st.file_uploader("Upload Netflix dataset (CSV)", type="csv")
+@st.cache_data
+def load_data():
+    url = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/netflix_titles.csv"
+    return pd.read_csv(url)
 
-if uploaded_file:
-    df = pd.read_csv(uploaded_file)
+df = load_data()
+
     
     # Data cleaning
     df = df.dropna(subset=['director', 'cast', 'country'])

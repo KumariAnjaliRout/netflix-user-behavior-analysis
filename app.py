@@ -9,7 +9,7 @@ st.title("📊 Netflix User Behavior Analysis")
 
 @st.cache_data
 def load_data():
-    url = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/netflix_titles.csv"
+    url = "https://raw.githubusercontent.com/KumariAnjaliRout/netflix-user-behavior-analysis/main/netflix_titles.csv"
     return pd.read_csv(url)
 
 df = load_data()
